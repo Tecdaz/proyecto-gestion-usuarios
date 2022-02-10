@@ -1,0 +1,24 @@
+{
+  "name": "proyecto-users",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tecdaz/proyecto-gestion-usuarios.git"
+  },
+  "author": "Santiago Arias",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tecdaz/proyecto-gestion-usuarios/issues"
+  },
+  "homepage": "https://github.com/Tecdaz/proyecto-gestion-usuarios#readme",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15"
+  }
+}
