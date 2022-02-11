@@ -23,3 +23,14 @@ router.post('/registro', async (req, res) => {
         return res.redirect('/registro')
     }
 })
+
+router.get('/users', (req, res) => {
+    return res.sendFile(views('users.html'))
+})
+
+router.get('/api/users', async (req, res) => {
+    var users = await userController.readAll()
+    return res.json(users)
+})
+
+module.exports = router
