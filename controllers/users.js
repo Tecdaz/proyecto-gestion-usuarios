@@ -10,6 +10,11 @@ class UserController{
         const users = await database.query('SELECT * FROM users')
         return users
     }
+
+    async delete(id){
+        const user = await database.del('users', id)
+        return user
+    }
 }
 
 module.exports = UserController
