@@ -33,4 +33,11 @@ router.get('/api/users', async (req, res) => {
     return res.json(users)
 })
 
+router.delete('/api/users/:id', async (req, res) => {
+    const id = req.params.id
+    let user = await userController.delete(id)
+    return res.json(user)
+})
+
+
 module.exports = router
