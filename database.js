@@ -29,13 +29,22 @@ async function insert(tablename, data) {
     }
 }
 
-async function del(tablename, data){
-    try{
-        await query(`DELETE FROM ${tablename} WHERE id = ?`,[data])
-        return {data, success:true}
-    }catch(error){
-        return {error, success:false}
+async function del(tablename, data) {
+    try {
+        await query(`DELETE FROM ${tablename} WHERE id = ?`, [data])
+        return { data, success: true }
+    } catch (error) {
+        return { error, success: false }
     }
 }
 
-module.exports = {query, insert, del}
+async function update(tablename, data) {
+    try {
+        await query(`UPDATE FROM ${tablename} SET name = ?, email = ? WHERE id = ?`, [data.name, data.email, data.id])
+        return { data, success: true }
+    } catch (error) {
+        return { error, success: false }
+    }
+}
+
+module.exports = { query, insert, del, update }
