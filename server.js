@@ -14,6 +14,8 @@ function views(document) {
 app.use(express.text())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+// eslint-disable-next-line no-undef
+app.use(express.static(path.join(__dirname, "static")))
 
 app.use(userRoutes)
 
