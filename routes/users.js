@@ -39,5 +39,16 @@ router.delete('/api/users/:id', async (req, res) => {
     return res.json(user)
 })
 
+router.post('/api/update/:id', async (req, res) =>{
+    const id = req.params.id
+    const user = await userController.update(req.body, id)
+    if (user.success) {
+        return res.redirect('/users')
+    } else {
+        return res.send(user)
+    }
+    
+})
+
 
 module.exports = router

@@ -38,9 +38,9 @@ async function del(tablename, data) {
     }
 }
 
-async function update(tablename, data) {
+async function update(tablename, data, id) {
     try {
-        await query(`UPDATE FROM ${tablename} SET name = ?, email = ? WHERE id = ?`, [data.name, data.email, data.id])
+        await query(`UPDATE ${tablename} SET ? WHERE id = ?`, [data, id])
         return { data, success: true }
     } catch (error) {
         return { error, success: false }

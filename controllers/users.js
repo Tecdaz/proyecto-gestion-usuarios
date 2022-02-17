@@ -16,8 +16,8 @@ class UserController{
         return user
     }
 
-    async update(data){
-        const user = await database.update('users', data)
+    async update(data, id){
+        const user = await database.update('users', data, id)
         return user
     }
 }
